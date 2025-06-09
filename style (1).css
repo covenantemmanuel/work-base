@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}body{
+  
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: firebrick;
+  position: sticky;
+}
+header .logo{
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+header input{
+  height: 30px;
+
+}
+
+  
+ .container{
+      display: flex;
+    }
+    nav{
+      width: 180px;
+      background: #f9f9f9;
+      padding: 10px;
+      height: 100vh;
+      position: sticky;
+      top: 60px;
+     
+    }
+    nav ul{
+      list-style: none;
+    }
+    nav ul li{
+      padding: 10px;
+      cursor: pointer;
+    }
+    li a{
+      text-decoration: none;
+      color:#000;
+    }
+    li:hover{
+      background: #e0e0e0;
+    }
