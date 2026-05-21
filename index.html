@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>video shot</title>
- <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finverse Premium Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<header>
-  <div class="logo">VideoShot</div>
-<input type="text" placeholder="Search" />
-</header>
-<div class="container">
-  <nav>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Trending</a></li>
-    <li><a href="#">Subscription</a></li>
-    <li><a href="#">Library</a></li>
-    <li><a href="#">History</a></li>
-   
-  </nav>
-  
-</div>
+  <header class="topbar">
+    <h1>Finverse</h1>
+    <div class="topbar-actions">
+      <button id="themeToggle">🌙</button>
+      <button id="logoutBtn" class="hidden">Logout</button>
+    </div>
+  </header>
 
+  <main class="container">
+    <section id="authCard" class="card">
+      <h2 id="authTitle">Create account</h2>
+      <form id="registerForm">
+        <div class="grid-2">
+          <input name="firstName" placeholder="First Name" required />
+          <input name="lastName" placeholder="Last Name" required />
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phoneNumber" placeholder="Phone Number" required />
+        <div class="password-row">
+          <input id="regPassword" type="password" name="password" placeholder="Password" required />
+          <button type="button" id="togglePass">Show</button>
+        </div>
+        <button type="submit">Register</button>
+      </form>
 
+      <form id="loginForm" class="hidden">
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
 
+      <div class="auth-links">
+        <button id="switchAuth">Already have an account? Login</button>
+        <button id="forgotBtn">Forgot Password</button>
+      </div>
+    </section>
 
+    <section id="dashboard" class="hidden">
+      <aside class="sidebar">
+        <button data-view="overview">Overview</button>
+        <button data-view="profile">Profile</button>
+        <button data-view="chat">Chat</button>
+        <button data-view="admin">Admin</button>
+        <button data-view="billing">Billing</button>
+      </aside>
 
+      <article class="panel" id="view-overview">
+        <h2>Realtime Analytics</h2>
+        <div class="stats" id="stats"></div>
+      </article>
 
+      <article class="panel hidden" id="view-profile">
+        <h2>Editable Profile</h2>
+        <form id="profileForm">
+          <input name="username" placeholder="Username" />
+          <input name="phoneNumber" placeholder="Phone Number" />
+          <input type="file" id="profileImage" accept="image/*" />
+          <button>Save Profile</button>
+        </form>
+      </article>
 
+      <article class="panel hidden" id="view-chat">
+        <h2>Realtime Messaging</h2>
+        <div id="messages" class="messages"></div>
+        <form id="chatForm" class="chat-form">
+          <input name="message" placeholder="Type a message..." required />
+          <button>Send</button>
+        </form>
+      </article>
 
+      <article class="panel hidden" id="view-admin">
+        <h2>Admin Dashboard</h2>
+        <input id="userSearch" placeholder="Search users" />
+        <ul id="userList"></ul>
+      </article>
 
+      <article class="panel hidden" id="view-billing">
+        <h2>Premium Subscription</h2>
+        <button data-plan="monthly">Subscribe Monthly</button>
+        <button data-plan="yearly">Subscribe Yearly</button>
+        <p id="billingStatus">No active subscription</p>
+      </article>
+    </section>
+  </main>
 
+  <div id="toast"></div>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
