@@ -1,0 +1,1 @@
+export interface UserProfile { id: string; firstName: string; lastName: string; username: string; email: string; phoneNumber: string; profileImage: string; createdAt: string; isPremium: boolean; role: 'user' | 'admin'; lastLogin: string; }
