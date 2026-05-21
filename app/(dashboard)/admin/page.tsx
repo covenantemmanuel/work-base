@@ -1,0 +1,2 @@
+'use client';
+export default function AdminPage(){return <main className='p-6'><h1 className='text-2xl font-bold'>Admin Dashboard</h1><div className='grid md:grid-cols-2 gap-4 mt-4'><section className='border rounded p-4'><h2>User management</h2><p>Search, suspend, delete users.</p></section><section className='border rounded p-4'><h2>Analytics</h2><p>Registrations, revenue, activity logs.</p></section></div></main>;}
